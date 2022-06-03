@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<h2 style="margin: 20px 0px;">All notes:</h2>
+
+
+{% if notes %}
+{% for el in notes %}
+<div class="alert alert-warning mt-2">
+    <h3>{{ el.title }}</h3>
+    <p>{{ el.text }}</p>
+</div>
+{% endfor %}
+{% else %}
+<p>You have no notes 😐. Try adding some.</p>
+{% endif %}
+
+{% endblock %}
